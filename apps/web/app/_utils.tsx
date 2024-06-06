@@ -46,16 +46,17 @@ export const _generateMetadata = async (
   const image =
     SEO_IMG_OGIMG +
     constructGenericImage({
-      title,
-      description,
+      title: t(title),
+      description: t(description),
     });
 
   return preparePageMetadata({
-    title,
+    title: t(title),
     canonical,
     image,
-    description,
+    description: t(description),
     siteName: APP_NAME,
     metadataBase,
+    locale,
   });
 };

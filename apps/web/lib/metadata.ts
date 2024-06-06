@@ -18,6 +18,7 @@ export type PageMetadataRecipe = Readonly<{
   description: string;
   siteName: string;
   metadataBase: URL;
+  locale?: string;
 }>;
 
 export const prepareRootMetadata = (recipe: RootMetadataRecipe): Metadata => ({
@@ -77,6 +78,7 @@ export const preparePageMetadata = (recipe: PageMetadataRecipe): Metadata => ({
     siteName: recipe.siteName,
     title: recipe.title,
     images: [recipe.image],
+    locale: "en_US",
   },
   metadataBase: recipe.metadataBase,
 });
